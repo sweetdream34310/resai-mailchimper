@@ -1,0 +1,65 @@
+version: "3.3"
+
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodb_datavol:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - am_network
+  redis:
+    image: redislabs/redisearch:latest
+    ports:
+      - 6379:6379
+    networks:
+      - am_network
+  rabbitmq:
+    image: rabbitmq:3.6.0-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+    networks:
+      - am_network
+    volumes:
+      - rabbitmq_datavol:/var/lib/rabbitmq
+  gaurun:
+    build:
+      context: ./gaurun
+    ports:
+      - 1057:1057
+    networks:
+      - am_network
+    volumes:
+      - ./gaurun/gaurun.toml:/conf/gaurun.toml
+      - ./gaurun/ios-prod.pem:/certs/ios-prod.pem
+      - ./gaurun/ios-prod.key:/certs/ios-prod.key
+  am:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+      network: host
+    environment:
+      - GOLANG_ENV=local
+      - GIN_MODE=release
+    # depends_on:
+    #   - mongodb
+    #   - rabbitmq
+    #   - redis
+    ports:
+      - 8080:8080
+    networks:
+      - am_network
+    volumes:
+      - backend_go_mod_data:/go/pkg/mod
+
+volumes:
+  backend_go_mod_data: {}
+  mongodb_datavol: {}
+  rabbitmq_datavol: {}
+  public_dir: {}
+
+networks:
+  am_network:
+    name: am_network

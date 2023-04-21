@@ -1,0 +1,51 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "loglevel": "info"
+  },
+  "google": {
+    "ios": {
+      "client_id": "182754413040-f30qggvmq8gq4lk9cqevdv9qvud3f81m.apps.googleusercontent.com",
+      "client_secret": ""
+    },
+    "website": {
+      "client_id": "182754413040-j2thkrededc8c5flkr232gciqgf5u2h3.apps.googleusercontent.com",
+      "client_secret": "TykEA9Jjw9H9nRcZ66GkgHN9"
+    }
+  },
+  "mongodb": {
+    "user": "awaymail",
+    "password": "awaymailpass%40123",
+    "hosts": ["database:38749"],
+    "database": "awaymail",
+    "sslEnabled": false
+  },
+  "rabbit": {
+    "host": "rabbitmq",
+    "port": 5672,
+    "user": "casbu",
+    "password": "m6mdJ9jDr3fMASrb",
+    "q": {
+      "inbox_processor": "inbox_processor_local",
+      "inbox_processor": "sent_processor_local"
+    }
+  },
+  "redis": {
+    "host": "redisearch",
+    "password": "",
+    "port": 6379
+  },
+  "application": {
+    "url":"https://am.dev.cloudsrc.com"
+  },
+  "gcs": {
+    "credential_path": "./serviceAccount-upload.json",
+    "bucket_name": "awaymail"
+  },
+  "gpubsub": {
+    "credential_path": "./awaymail-84795cd1daa6.json",
+    "project_name": "awaymail"
+  },
+  "salt": "dTj%/2}#+{5CC;zeK5-&"
+}

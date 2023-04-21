@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta />
+    <meta />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+      .board {
+        background-color: #fff;
+        width: 600px;
+        height: 1168px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+      }
+      .header-main {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+      }
+      .header-icon-board {
+        width: 60px;
+        height: 60px;
+      }
+      .header-tile {
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: Open Sans;
+        color: #335d8f;
+        font-weight: bold;
+        margin-top: -20px;
+        /* margin-bottom: auto; */
+      }
+      .title-board {
+        width: 100%;
+        height: 170px;
+        display: flex;
+        align-items: center;
+      }
+      .title {
+        font-family: Work Sans;
+        font-style: bold;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 66px;
+        /* or 120% */
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+        /* Neutrals/Black - #333333 */
+        color: #333333;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .title-main {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content-board {
+        width: 100%;
+        height: auto;
+      }
+      .content-main {
+        width: 400px;
+        height: 170.5px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 34px;
+        text-align: center;
+        color: #333333;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .send-email-btn {
+        width: 255px;
+        height: 48px;
+
+        /* Inside auto layout */
+
+        order: 2;
+        flex-grow: 0;
+        background-color: #2b6dea;
+        border-radius: 8px;
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* padding: 10px 77px; */
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+      }
+      .send-email-btn-label {
+        width: 247px;
+        height: 27px;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        /* AwayMail Brand/White #FFF */
+
+        color: #ffffff;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+      .send-email-icon-board {
+        width: 24px;
+        height: 24px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+      .content-data {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .content-data-img {
+        width: 110px;
+        height: 110px;
+        /* background-size: 100% 100%; */
+        /* background-image: url("https://storage.googleapis.com/awaymail/email/bird-bottle.png"); */
+      }
+      .content-data-content {
+        width: 380.5px;
+        height: auto;
+        background-color: #f2f2f2;
+        align-items: center;
+      }
+      .content-data-lable {
+        width: 340px;
+        margin-left: 15px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 34px;
+        /* or 155% */
+        /* AwayMail Brand/Black #333 */
+
+        color: #333333;
+        display: flex;
+        align-items: center;
+      }
+      .footer {
+        width: 100%;
+        height: 390px;
+        margin-top: 50px;
+        background-color: #333333;
+      }
+      .footer-title {
+        padding-top: 70px;
+        width: 260px;
+        height: 22px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 19px;
+        line-height: 19px;
+        /* or 146% */
+
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-feature-settings: "pnum" on, "onum" on;
+
+        color: #e5e5e5;
+      }
+      .footer-icon {
+        width: 54px;
+        height: 54px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: 100% 100%;
+        background-image: url("https://storage.googleapis.com/awaymail/email/am-bw.png");
+      }
+      .footer-content {
+        width: 260px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+        /* or 146% */
+
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-feature-settings: "pnum" on, "onum" on;
+
+        color: #e5e5e5;
+      }
+      .footer-awaymail {
+        padding-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 19px;
+        line-height: 19px;
+        /* or 146% */
+
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-feature-settings: "pnum" on, "onum" on;
+
+        color: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="email-content">
+      <div class="board">
+        <!-- <div class="header"> -->
+        <!-- <div class="header-main"> -->
+
+        <!-- <div class="header-icon-board"></div> -->
+
+        <!-- <img
+              class="header-icon-board"
+              src="https://storage.googleapis.com/awaymail/email/am-color.png"
+            />
+            <div style="padding-top: 15px;">
+              <a class="header-tile">awaymail</a>
+            </div>
+          </div>
+        </div> -->
+        <div
+          style="
+            width: 300px;
+            height: 100px;
+            margin-left: 220px;
+            display: flex;
+            align-items: center;
+          "
+        >
+          <img
+            class="header-icon-board"
+            src="https://storage.googleapis.com/awaymail/email/am-color.png"
+          />
+          <a class="header-tile">awaymail</a>
+        </div>
+
+        <div class="title-board">
+          <div class="title-main">
+            <div class="title">I'm currently</div>
+            <div class="title">Away</div>
+          </div>
+        </div>
+        <div class="content-board">
+          <div class="content-main">
+            Thanks for your email. I am away from my email until
+            {{.Email.awaymail.date}}. If you need a response before then. click
+            below for your message to reach me immediately.
+          </div>
+          <button class="send-email-btn" style="margin-left: 170px">
+            <a
+              class="send-email-btn-label"
+              target="_blank"
+              href="https://www.awaymail.net/breakthrough"
+              style="text-decoration: none"
+              >Send email →</a
+            >
+          </button>
+
+          <!-- <div
+            style="
+              width: 500px;
+              height: 120px;
+              margin-left: 50px;
+              margin-top: 40px;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <img
+              class="content-data-img"
+              src="https://storage.googleapis.com/awaymail/email/bird-bottle.png"
+            />
+            <h3 class="content-data-content">
+              <a class="content-data-lable">
+                AwayMail helps you auto-manage your email when you are away.
+              </a>
+              <a
+                target="_blank"
+                href="https://www.awaymail.net/"
+                class="content-data-lable"
+                style="color: #2b6dea; font-weight: bold"
+                >Get the app.</a
+              >
+            </h3>
+          </div> -->
+
+          <table
+            style="
+              width: 500px;
+              height: 120px;
+              margin-left: 50px;
+              margin-top: 40px;
+              align-items: center;
+            "
+          >
+            <tr>
+              <td>
+                <img
+                  class="content-data-img"
+                  src="https://storage.googleapis.com/awaymail/email/bird-bottle.png"
+                />
+              </td>
+              <td>
+                <h3 class="content-data-content">
+                  <a class="content-data-lable">
+                    AwayMail helps you auto-manage your email when you are away.
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.awaymail.net/"
+                    class="content-data-lable"
+                    style="color: #2b6dea; font-weight: bold"
+                    >Get the app.</a
+                  >
+                </h3>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="footer">
+          <div class="footer-title">Powered by</div>
+          <!-- <div class="footer-icon"></div> -->
+          <!-- <div >
+            <img
+              style="
+                width: 54px;
+                height: 54px;
+                margin-left: calc(50% - 27px);
+                margin-right: auto;
+              "
+              src="https://storage.googleapis.com/awaymail/email/am-bw.png"
+            />
+          </div> -->
+          <div class="header-main">
+            <!-- <div class="header-icon-board"></div> -->
+            <img
+              style="width: 54px; height: 54px; margin-left: 275px"
+              src="https://storage.googleapis.com/awaymail/email/am-bw.png"
+            />
+          </div>
+          <div class="footer-awaymail">
+            <a
+              target="_blank"
+              href="https://twitter.com/Stopcasbu"
+              style="color: #e5e5e5"
+              >awaymail</a
+            >
+          </div>
+          <div class="footer-content">
+            This is an automated email. You are receiving this because you sent
+            an email to {{.Email.awaymail.email}}. {{.Email.awaymail.name}} uses
+            AwayMail to automate their away messages.
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

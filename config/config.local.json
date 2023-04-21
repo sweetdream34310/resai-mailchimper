@@ -1,0 +1,66 @@
+{
+    "server": {
+        "host": "127.0.0.1",
+        "port": 8081,
+        "loglevel": "info"
+    },
+    "google": {
+        "ios": {
+            "client_id": "182754413040-f30qggvmq8gq4lk9cqevdv9qvud3f81m.apps.googleusercontent.com",
+            "client_secret": ""
+        },
+        "website": {
+            "client_id": "182754413040-j2thkrededc8c5flkr232gciqgf5u2h3.apps.googleusercontent.com",
+            "client_secret": "TykEA9Jjw9H9nRcZ66GkgHN9"
+        }
+    },
+    "mongodb": {
+        "user": "awaymail",
+        "password": "awaymailpass%40123",
+        "hosts": ["dev.db.casbu.cloudsrc.com:38749"],
+        "database": "awaymail",
+        "sslEnabled": false
+    },
+    "rabbit": {
+        "host": "127.0.0.1",
+        "port": 5672,
+        "user": "guest",
+        "password": "guest",
+        "q": {
+            "inbox_processor": "inbox_processor_local",
+            "inbox_processor": "sent_processor_local"
+        }
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "password": "",
+        "port": 6379
+    },
+    "application": {
+        "url":"http://localhost:8081"
+    },
+    "gcs": {
+        "credential_path": "./serviceAccount-upload.json",
+        "bucket_name": "awaymail"
+    },
+    "gpubsub": {
+        "credential_path": "./awaymail-84795cd1daa6.json",
+        "project_name": "awaymail",
+        "topic": "awaymail-notification",
+        "subscribe": "awaymail-notification-sub-local"
+    },
+    "gaurun": {
+        "url": "http://localhost:1057/push",
+        "url_dev": "http://localhost:1058/push"
+    },
+    "mailgun": {
+        "apikey": "5de2d3f5297a912d9ec302fc1a3c553c-62916a6c-b3535dfd",
+        "domain": "mg.casbu.com"
+    },
+    "Chatgpt": {
+        "chat_gpturl": "https://api.openai.com",
+        "chat_gpt_skip_tls": false,
+        "chat_gpt_token": "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"
+    },
+    "salt": "dTj%/2}#+{5CC;zeK5-&"
+}

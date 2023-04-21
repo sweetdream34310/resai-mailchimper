@@ -1,0 +1,9 @@
+bin/*
+.vscode
+vendor
+credentials.json
+token.json
+awaymail_server
+public/*
+coverage.cov
+Awaymail.md

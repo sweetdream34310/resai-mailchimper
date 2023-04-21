@@ -1,0 +1,20 @@
+Logo
+
+
+** I'm Currently Away
+
+------------------------------------------------------------
+
+Thanks for your email. I am away from my email until {{.Email.awaymail.date}}. If you need a response before then, click below for your message to reach me immediately.
+{{.Email.awaymail.breakthrough}}
+
+Send email
+
+
+** AwayMail helps you auto-manage your email when you are away. Get the app. (https://www.awaymail.net/)
+------------------------------------------------------------
+
+Powered By
+https://twitter.com/Stopcasbu
+
+This is an automated email. You are receiving this because you sent an email to {{.Email.awaymail.email}}. {{.Email.awaymail.name}} uses AwayMail to automate their away messages.
